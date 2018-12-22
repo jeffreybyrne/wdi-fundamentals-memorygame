@@ -1,25 +1,27 @@
-var cards = ['queen','queen','king','king'];
+//Array of cards
+var cards = [{rank: "queen", suit: "hearts", cardImage: "images/queen-of-hearts.png"},
+{rank: "queen", suit: "diamonds", cardImage: "images/queen-of-diamonds.png"},
+{rank: "king", suit: "hearts", cardImage: "images/king-of-hearts.png"},
+{rank: "king", suit: "diamonds", cardImage: "images/king-of-diamonds.png"}];
+
+//Array of the cards currently in play
 var cardsInPlay = [];
 
-
-
-
-
+//Function to determine what the user selected
 var flipCard = function(cardId) {
-	// var cardOne = cards[3];
-	// cardsInPlay.push(cardOne);
-	// console.log('User flipped ' + cards[3]);
-
-	// var cardTwo = cards[2];
-	// cardsInPlay.push(cardTwo);
-	// console.log('User flipped ' + cards[2]);
-	console.log("User flipped " + cards[cardId]);
-	cardsInPlay.push(cards[cardId]);
+	//Log which card the user selected
+	console.log("User flipped " + cards[cardId].rank);
+	//Add the selected card to the list of cards currently in play
+	cardsInPlay.push(cards[cardId].rank);
+	console.log(cards[cardId].cardImage);
+	console.log(cards[cardId].suit);
+	//If there are now two cards in play, check for a match
 	if (cardsInPlay.length === 2) {
 		checkForMatch();
 	}		
 }
 
+//Function to check if the selected cards are a match
 var checkForMatch = function() {
 	if (cardsInPlay[0] === cardsInPlay[1]) {
 		alert('You found a match!');
