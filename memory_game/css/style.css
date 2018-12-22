@@ -103,3 +103,23 @@ a {
 a:hover {
 	border-color: white;
 }
+
+ul {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+#score-location {
+    width: 70%;
+    margin: auto;
+}
+
+.scoreList {
+	font-family: "Droid Serif", serif;
+	line-height: 24px;
+	font-size: 18px;
+	list-style-type: none;
+	text-align: center;
+	display: block;
+}
